@@ -8,4 +8,5 @@
  */
 
 rootProject.name = 'spark_utils'
-include('app')
+include('spark_3.2.2')
+include('spark_2.4.8')

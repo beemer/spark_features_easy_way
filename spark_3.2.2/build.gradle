@@ -1,0 +1,40 @@
+/*
+ */
+
+plugins {
+    id 'scala'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    def sparkVersion = "3.2.2"
+    def scalaMajorVersion = "2.12"
+    def scalaMinorVersion = "2.12.16"
+    def scalaTestVersion = "3.2.13"
+    def scalaTestPlusVersion = "3.2.13.0"
+    def scalaXmlVersion = "2.1.0"
+    def typesafeVersion = "1.4.2"
+
+    implementation "org.scala-lang:scala-library:$scalaMinorVersion"
+    implementation 'com.google.guava:guava:30.1.1-jre'
+    implementation "org.apache.spark:spark-core_$scalaMajorVersion:$sparkVersion"
+    implementation "org.apache.spark:spark-sql_$scalaMajorVersion:$sparkVersion"
+    implementation "org.apache.spark:spark-hive_$scalaMajorVersion:$sparkVersion"
+    implementation "org.apache.spark:spark-catalyst_$scalaMajorVersion:$sparkVersion"
+    implementation "org.apache.spark:spark-avro_$scalaMajorVersion:$sparkVersion"
+    implementation "com.typesafe:config:$typesafeVersion"
+
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "org.scalatest:scalatest_$scalaMajorVersion:$scalaTestVersion"
+    testImplementation "org.scalatestplus:junit-4-13_$scalaMajorVersion:$scalaTestPlusVersion"
+
+    testRuntimeOnly "org.scala-lang.modules:scala-xml_$scalaMajorVersion:$scalaXmlVersion"
+}
+
+application {
+    mainClass = 'org.avant.spark3.App'
+}
