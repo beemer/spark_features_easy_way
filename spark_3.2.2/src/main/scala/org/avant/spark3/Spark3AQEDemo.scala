@@ -1,6 +1,7 @@
 package org.avant.spark3
 
 import org.apache.spark.sql.DataFrame
+import org.apache.spark.sql.functions.{col, explode_outer}
 import org.avant.spark3.utils.SimpleTestData._
 import org.avant.spark3.utils.Spark3Initializer
 
@@ -32,7 +33,8 @@ object Spark3AQEDemo extends App with Spark3Initializer{
 
   def nestedWithAQE(): Unit = {
     sparkSession.conf.set("spark.sql.adaptive.enabled", value = true)
-    val df2 = nestedDataDf.groupBy("genre").count()
+    val df2 = nestedDataDf.withColumn("genre",explode_outer(col("genre"))).groupBy("genre").count()
     println("Nested With AQE Part Count *********" + df2.rdd.getNumPartitions)
+    df2.show()
   }
 }
