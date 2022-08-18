@@ -1,0 +1,97 @@
+
+{
+  "type" : "struct",
+  "fields" : [
+  {
+    "name" : "actorName",
+    "type" : {
+      "type" : "struct",
+      "fields" : [ {
+        "name" : "firstName",
+        "type" : "string",
+        "nullable" : true,
+        "metadata" : { }
+      }, {
+        "name" : "middleName",
+        "type" : "string",
+        "nullable" : true,
+        "metadata" : { }
+      }, {
+        "name" : "lastName",
+        "type" : "string",
+        "nullable" : true,
+        "metadata" : { }
+      } ]
+    },
+    "nullable" : true,
+    "metadata" : { }
+  },
+  {
+    "name" : "genre",
+    "type" : {
+      "type": "array",
+      "fields": [{
+        "type": "string"
+      }]
+    },
+    "nullable" : true,
+    "metadata" : { }
+  },
+  {
+    "name" : "residence",
+    "type" : {
+      "type" : "struct",
+      "fields" : [
+      {
+        "name" : "street",
+        "type" : "string",
+        "nullable" : true,
+        "metadata" : { }
+      },
+      {
+        "name" : "city",
+        "type" : "string",
+        "nullable" : true,
+        "metadata" : { }
+      },
+      {
+        "name" : "state",
+        "type" : "string",
+        "nullable" : true,
+        "metadata" : { }
+      },
+      {
+        "name" : "country",
+        "type" : "string",
+        "nullable" : false,
+        "metadata" : { }
+      } ]
+    },
+    "nullable" : true,
+    "metadata" : { }
+  },
+  {
+    "name" : "fee_per_movie",
+    "type" : "long",
+    "nullable" : true,
+    "metadata" : { }
+  },
+  {
+    "name" : "age",
+    "type" : "integer",
+    "nullable" : false,
+    "metadata" : { }
+  },
+  {
+    "name" : "netWorth",
+    "type" : "long",
+    "nullable" : false,
+    "metadata" : { }
+  },
+  {
+    "name" : "movieCount",
+    "type" : "integer",
+    "nullable" : false,
+    "metadata" : { }
+  }]
+}
