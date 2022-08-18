@@ -49,6 +49,6 @@ object SimpleTestData extends Spark3Initializer {
 
   private val schemaUrl = ClassLoader.getSystemResource("actorBio.json")
   private val schemaSource = Source.fromFile(schemaUrl.getFile).getLines().mkString
-  val structSchema = DataType.fromJson(schemaSource).asInstanceOf[StructType]
+  val structSchema: StructType = DataType.fromJson(schemaSource).asInstanceOf[StructType]
   val nestedDataDf:DataFrame = sparkSession.createDataFrame(sparkSession.sparkContext.parallelize(nestedData), structSchema)
 }
