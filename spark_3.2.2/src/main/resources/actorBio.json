@@ -30,9 +30,8 @@
     "name" : "genre",
     "type" : {
       "type": "array",
-      "fields": [{
-        "type": "string"
-      }]
+      "containsNull": true,
+      "elementType": "string"
     },
     "nullable" : true,
     "metadata" : { }
